@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Group Kids September 20, 2026</title>
+<style>
+:root {
+  --navy:#1A3C5E; --gold:#C8923A; --green:#1A7A4A; --purple:#6B3FA0;
+  --rust:#B85C2A; --teal:#1A6B6B; --pink:#C2557A; --light:#EAF3FB;
+  --border:#E2E8F0; --muted:#6B7280; --ink:#1C1C1C; --cream:#FAF8F4;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,sans-serif; background:var(--cream); color:var(--ink); }
+header { background:var(--navy); padding:18px 20px; border-bottom:4px solid var(--gold); }
+header .sub { font-size:11px; color:#8BAFD0; letter-spacing:.1em; text-transform:uppercase; margin-bottom:3px; }
+header h1 { font-family:Georgia,serif; font-size:20px; color:#fff; font-weight:700; margin-bottom:2px; }
+header .sermon { font-size:13px; color:#8BAFD0; }
+nav { background:#fff; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; gap:8px; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
+.tab { padding:8px 16px; border-radius:20px; border:1.5px solid var(--border); background:#fff; color:var(--muted); font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; }
+.tab.active { background:var(--navy); border-color:var(--navy); color:#fff; }
+.wrap { max-width:760px; margin:0 auto; padding:20px 14px 60px; }
+.absent { background:#FEF9E7; border:1px solid #F0C040; border-radius:10px; padding:12px 16px; display:flex; gap:10px; align-items:center; margin-bottom:16px; }
+.absent span { font-size:13px; color:#7D5A00; font-weight:600; }
+.info-badge { background:#EAF3FB; border:1px solid #2E6DA4; border-radius:10px; padding:12px 16px; display:flex; gap:10px; align-items:center; margin-bottom:16px; }
+.info-badge span { font-size:13px; color:#1A3C5E; font-weight:600; }
+.schedule { display:flex; gap:6px; margin-bottom:20px; flex-wrap:wrap; }
+.sched-item { border-radius:8px; padding:6px 10px; flex:1 1 auto; min-width:80px; }
+.sched-item .st { font-size:10px; color:rgba(255,255,255,.75); font-weight:600; }
+.sched-item .sl { font-size:11px; color:#fff; font-weight:700; line-height:1.3; }
+.plan-block { background:#fff; border-radius:14px; border:1px solid var(--border); margin-bottom:14px; overflow:hidden; box-shadow:0 2px 8px rgba(26,60,94,.05); }
+.plan-head { padding:14px 18px; }
+.plan-head .pt { font-size:11px; color:rgba(255,255,255,.7); font-weight:600; }
+.plan-head .pl { font-family:Georgia,serif; font-size:17px; color:#fff; font-weight:700; }
+.plan-body { padding:16px 18px; }
+.item { display:flex; gap:10px; margin-bottom:8px; font-size:14px; line-height:1.7; }
+.item .dash { color:var(--gold); font-weight:700; flex-shrink:0; }
+.group-card { border-radius:10px; padding:14px; margin-bottom:10px; }
+.group-tag { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:3px 10px; border-radius:20px; display:inline-block; margin-bottom:6px; }
+.group-zone { font-size:12px; color:var(--muted); margin-bottom:8px; }
+.rules-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:6px; }
+.rule-item { display:flex; gap:8px; margin-bottom:5px; font-size:13px; }
+.rule-num { font-weight:700; font-size:12px; flex-shrink:0; }
+.script-box { border-radius:8px; padding:12px 14px; margin-top:10px; }
+.script-label { font-size:11px; font-weight:700; text-transform:uppercase; margin-bottom:5px; }
+.script-text { font-size:14px; font-style:italic; line-height:1.7; }
+.q-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; color:var(--navy); }
+.q-item { display:flex; gap:10px; margin-bottom:7px; font-size:13px; line-height:1.6; }
+.q-num { font-weight:700; flex-shrink:0; color:var(--navy); }
+.video-box { background:#1A3C5E; border-radius:12px; padding:16px 18px; margin-bottom:14px; }
+.video-box .vt { font-family:Georgia,serif; font-size:16px; color:#fff; font-weight:700; margin-bottom:4px; }
+.video-box .vs { font-size:13px; color:#8BAFD0; margin-bottom:8px; }
+.video-box .vl { display:inline-block; background:var(--gold); color:#fff; font-size:12px; font-weight:700; padding:6px 16px; border-radius:20px; text-decoration:none; }
+.leader-header { border-radius:14px; padding:18px 20px; margin-bottom:16px; display:flex; align-items:center; gap:14px; }
+.leader-emoji { font-size:32px; }
+.leader-name { font-family:Georgia,serif; font-size:20px; color:#fff; font-weight:700; }
+.leader-role { font-size:13px; color:rgba(255,255,255,.8); }
+.lblock { border:1px solid var(--border); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+.lblock-head { padding:12px 16px; display:flex; align-items:center; gap:10px; cursor:pointer; background:#fff; transition:background .2s; }
+.lblock-head:hover { background:var(--light); }
+.lblock-time { font-size:11px; font-weight:700; color:var(--muted); min-width:80px; }
+.lblock-title { flex:1; font-weight:700; color:var(--navy); font-size:14px; }
+.lblock-chev { color:var(--muted); font-size:16px; transition:transform .2s; }
+.lblock-body { display:none; padding:0 16px 16px; border-top:1px solid var(--border); }
+.lblock-body.open { display:block; }
+.assign-block { background:#fff; border-radius:12px; border:1px solid var(--border); overflow:hidden; margin-bottom:12px; box-shadow:0 2px 8px rgba(26,60,94,.05); }
+.assign-head { padding:10px 16px; }
+.assign-head-label { font-family:Georgia,serif; font-size:14px; color:#fff; font-weight:700; }
+.assign-row { padding:10px 14px; display:grid; grid-template-columns:55px 1fr 1fr; gap:8px; align-items:center; border-bottom:1px solid var(--border); }
+.assign-row:last-child { border-bottom:none; }
+.assign-group { font-size:11px; font-weight:700; text-transform:uppercase; }
+.assign-zone { font-size:13px; font-weight:600; color:var(--navy); }
+.assign-activity { font-size:12px; color:var(--ink); }
+.floor-wrap { background:#fff; border-radius:14px; border:1px solid var(--border); padding:14px; box-shadow:0 4px 24px rgba(26,60,94,.07); margin-bottom:20px; }
+.floor-grid { display:grid; grid-template-columns:58px 1fr; gap:8px; margin-bottom:8px; }
+.left-col { display:flex; flex-direction:column; gap:6px; }
+.stair-label { font-size:8px; color:var(--muted); font-weight:700; text-align:center; }
+.room-box { border-radius:8px; padding:8px 4px; text-align:center; cursor:pointer; transition:all .15s; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.main-room { border:2px solid var(--green); border-radius:12px; padding:10px; background:#F0FBF4; }
+.arcade-label { text-align:center; font-size:8px; color:var(--muted); font-weight:700; margin-bottom:8px; }
+.mr-mid { display:grid; grid-template-columns:1fr 1.4fr; gap:8px; margin-bottom:8px; }
+.blob { border-radius:45% 50% 45% 50% / 50% 45% 55% 45%; padding:12px 6px; text-align:center; cursor:pointer; transition:all .15s; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.open-floor { border:2px dashed #CBD5E1; border-radius:10px; background:#F8FAFC; display:flex; align-items:center; justify-content:center; }
+.junction-row { display:grid; grid-template-columns:58px 1fr 1fr; gap:8px; margin-bottom:8px; }
+.bottom-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px; }
+.z3-wrap { border:2px solid #C0392B; border-radius:12px; padding:10px; background:#FEF2F2; }
+.bedrooms { border-top:2px dashed #CBD5E1; margin-top:8px; padding-top:8px; }
+.bedroom-label { font-size:8px; color:#C0392B; font-weight:700; text-transform:uppercase; margin-bottom:6px; }
+.bedroom-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; }
+.bedroom-cell { border:1px solid #CBD5E1; border-radius:6px; padding:5px 2px; background:#F8FAFC; text-align:center; }
+.detail-panel { background:#fff; border-radius:12px; padding:16px; margin-bottom:16px; box-shadow:0 4px 16px rgba(26,60,94,.1); display:none; }
+.detail-panel.show { display:block; }
+.detail-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.usage-row { display:flex; align-items:center; gap:10px; border-radius:8px; padding:9px 12px; margin-bottom:6px; }
+.close-btn { margin-top:10px; padding:6px 14px; border-radius:20px; border:1.5px solid var(--border); background:#fff; color:var(--muted); font-size:12px; font-weight:600; cursor:pointer; }
+.map-legend { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+.legend-item { display:flex; align-items:center; gap:5px; background:#fff; border:1px solid var(--border); border-radius:20px; padding:3px 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="sub">Life Group Kids</div>
+  <h1>Sunday September 20, 2026</h1>
+  <div class="sermon">Superbook Samuel and the Call of God</div>
+</header>
+
+<nav>
+  <button class="tab active" onclick="showView('full',this)">Full Plan</button>
+  <button class="tab" onclick="showView('parker',this)">Parker + Gentry</button>
+  <button class="tab" onclick="showView('kendall',this)">Kendall</button>
+  <button class="tab" onclick="showView('map',this)">🗺 Zone Map</button>
+</nav>
+
+<div class="wrap">
+
+<!-- FULL PLAN -->
+<div id="view-full">
+  <div class="info-badge">📺 <span>Middles and Bigs watch Superbook together today. Fully inside. Zone 3 is off limits. Parker + Gentry are both with Littles.</span></div>
+
+  <div style="background:#fff;border-radius:14px;border:1px solid var(--border);padding:18px;margin-bottom:16px;box-shadow:0 2px 8px rgba(26,60,94,.05)">
+    <div style="font-family:Georgia,serif;font-size:16px;font-weight:700;color:#1A3C5E;margin-bottom:14px">Today's Roster</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:#1A6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Littles</div>
+        <div style="font-size:11px;color:#6B7280;margin-bottom:2px;font-weight:600">Parker</div>
+        <div style="font-size:12px;color:#1C1C1C;margin-bottom:6px">Benaiah, Beau</div>
+        <div style="font-size:11px;color:#6B7280;margin-bottom:2px;font-weight:600">Gentry</div>
+        <div style="font-size:12px;color:#1C1C1C">Beckett, Milly, Woods</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:#6B3FA0;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Middles</div>
+        <div style="font-size:11px;color:#6B7280;margin-bottom:2px;font-weight:600">Kendall</div>
+        <div style="font-size:12px;color:#1C1C1C;line-height:1.7">Kenzie, Nora, Everly, Wells, Curtis, Emmy, Adelaide</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:#B85C2A;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Bigs</div>
+        <div style="font-size:11px;color:#6B7280;margin-bottom:2px;font-weight:600">Kendall</div>
+        <div style="font-size:12px;color:#1C1C1C;line-height:1.7">Quinton, West, Walker, Kai, Levi, Caden</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="schedule">
+    <div class="sched-item" style="background:#1A3C5E"><div class="st">3:00-3:10</div><div class="sl">Arrive</div></div>
+    <div class="sched-item" style="background:#6B3FA0"><div class="st">3:10-3:30</div><div class="sl">Icebreaker</div></div>
+    <div class="sched-item" style="background:#1A7A4A"><div class="st">3:30-4:00</div><div class="sl">Superbook Video</div></div>
+    <div class="sched-item" style="background:#C8923A"><div class="st">4:00-4:15</div><div class="sl">Snack</div></div>
+    <div class="sched-item" style="background:#B85C2A"><div class="st">4:15-4:35</div><div class="sl">Discussion</div></div>
+    <div class="sched-item" style="background:#1A6B6B"><div class="st">4:35-5:00</div><div class="sl">Free Time</div></div>
+  </div>
+
+  <!-- ARRIVE -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#1A3C5E">
+      <div class="pt">3:00 to 3:10</div><div class="pl">Arrival and Settle</div>
+    </div>
+    <div class="plan-body">
+      <div class="item"><span class="dash">-</span>Calm music on. Leaders in position before kids arrive.</div>
+      <div class="item"><span class="dash">-</span>Parker takes Littles to Little Zone 2. Kendall and Gentry receive Middles and Bigs in Zone 1 and 2.</div>
+      <div class="item"><span class="dash">-</span>Give everyone 10 minutes to settle, drop bags, find a spot.</div>
+      <div class="item"><span class="dash">-</span>Say the 4 Rules before icebreaker starts.</div>
+      <div style="margin-top:10px">
+        <div class="rules-label" style="color:#1A3C5E">The 4 Rules</div>
+        <div class="rule-item"><span class="rule-num" style="color:#1A3C5E">1.</span>Hands and feet to yourself</div>
+        <div class="rule-item"><span class="rule-num" style="color:#1A3C5E">2.</span>Listen the first time</div>
+        <div class="rule-item"><span class="rule-num" style="color:#1A3C5E">3.</span>Stay in your zone</div>
+        <div class="rule-item"><span class="rule-num" style="color:#1A3C5E">4.</span>Respect leaders and each other</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICEBREAKER -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#6B3FA0">
+      <div class="pt">3:10 to 3:30</div><div class="pl">Icebreaker Middles and Bigs Together</div>
+    </div>
+    <div class="plan-body">
+      <div class="group-card" style="background:#6B3FA008;border:1px solid #6B3FA030;margin-bottom:10px">
+        <span class="group-tag" style="background:#6B3FA018;color:#6B3FA0">Middles + Bigs</span>
+        <div class="group-zone">Kendall Zones 1 and 2 (main room)</div>
+        <div class="item"><span class="dash" style="color:#6B3FA0">-</span>Sit everyone in a circle or gathered around the couch area.</div>
+        <div class="item"><span class="dash" style="color:#6B3FA0">-</span>Go around the circle. Everyone answers one question before moving to the next.</div>
+        <div class="item"><span class="dash" style="color:#6B3FA0">-</span>Leaders go first to model it and set the tone.</div>
+        <div style="margin-top:10px">
+          <div class="q-label">Icebreaker Questions go around the circle:</div>
+          <div class="q-item"><span class="q-num">1.</span>What is one word that describes your week?</div>
+          <div class="q-item"><span class="q-num">2.</span>What is something that happened this week that you did not expect?</div>
+          <div class="q-item"><span class="q-num">3.</span>If you could have any superpower for one day this week, what would you have used it for?</div>
+          <div class="q-item"><span class="q-num">4.</span>What is one thing you are looking forward to this week?</div>
+        </div>
+        <div class="script-box" style="background:#FFF8EE;border:1px solid #C8923A;margin-top:10px">
+          <div class="script-label" style="color:#C8923A">Transition to video:</div>
+          <div class="script-text">Alright. We are going to watch something together today. It is about a kid who thought he was too young to matter. Spoiler he was wrong. Let's watch.</div>
+        </div>
+      </div>
+      <div class="group-card" style="background:#1A6B6B08;border:1px solid #1A6B6B30">
+        <span class="group-tag" style="background:#1A6B6B18;color:#1A6B6B">Littles</span>
+        <div class="group-zone">Parker + Gentry Little Zone 2</div>
+        <div class="item"><span class="dash" style="color:#1A6B6B">-</span>Open play, books, soft toys. Keep it calm and contained.</div>
+        <div class="item"><span class="dash" style="color:#1A6B6B">-</span>Simple prompts: Can you build a tower? What color is that?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#1A7A4A">
+      <div class="pt">3:30 to 4:00</div><div class="pl">Video Time</div>
+    </div>
+    <div class="plan-body">
+      <div class="group-card" style="background:#B85C2A08;border:1px solid #B85C2A30;margin-bottom:12px">
+        <span class="group-tag" style="background:#B85C2A18;color:#B85C2A">Middles + Bigs</span>
+        <div class="group-zone">Kendall — Zones 1 and 2 (main room)</div>
+        <div class="video-box">
+          <div class="vt">Samuel and the Call of God</div>
+          <div class="vs">Superbook Season 3 Episode 6 — 27 minutes — YouTube</div>
+          <a class="vl" href="https://youtu.be/dMoekXiJw_A" target="_blank">▶ Open Video</a>
+        </div>
+        <div class="item"><span class="dash" style="color:#B85C2A">-</span>Get everyone settled and seated before pressing play.</div>
+        <div class="item"><span class="dash" style="color:#B85C2A">-</span>No talking during the video. Pause and reset if it gets noisy.</div>
+        <div class="item"><span class="dash" style="color:#B85C2A">-</span>27 minutes. Ends right at 4:00 for snack.</div>
+        <div style="margin-top:10px;background:#EAF3FB;border-radius:8px;padding:10px 12px;">
+          <div style="font-size:11px;font-weight:700;color:#1A3C5E;text-transform:uppercase;margin-bottom:4px">What it covers</div>
+          <div style="font-size:13px;color:#1C1C1C;line-height:1.7">Chris thinks he is too young to make a difference. Superbook takes the kids back to meet the boy Samuel who hears God calling him but keeps thinking it is his master Eli. Once he learns to listen and respond, God uses him to lead all of Israel. You are never too young to be called by God.</div>
+        </div>
+      </div>
+      <div class="group-card" style="background:#1A6B6B08;border:1px solid #1A6B6B30">
+        <span class="group-tag" style="background:#1A6B6B18;color:#1A6B6B">Littles</span>
+        <div class="group-zone">Parker + Gentry — Zone 3 corner by Little Zone 2 (exception setup only)</div>
+        <div style="background:#FEF9E7;border:1px solid #F0C040;border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12px;color:#7D5A00;font-weight:600">One-time exception: two chairs and a small table in the Zone 3 corner nearest Little Zone 2. This corner only. Zone 3 is still off limits for everything else.</div>
+        <div class="video-box">
+          <div class="vt">VeggieTales: Why Should I Listen?</div>
+          <div class="vs">Larry Learns to Listen — clip — YouTube</div>
+          <a class="vl" href="https://youtu.be/5UFe29_oC7A" target="_blank">▶ Open Video</a>
+        </div>
+        <div class="item"><span class="dash" style="color:#1A6B6B">-</span>Settle Beckett, Milly, and Woods in the chairs before pressing play. Benaiah and Beau can be held.</div>
+        <div class="item"><span class="dash" style="color:#1A6B6B">-</span>Keep the environment calm and cozy. Does not need to be structured.</div>
+        <div style="margin-top:10px">
+          <div class="q-label">Simple questions after the video:</div>
+          <div class="q-item"><span class="q-num">1.</span>What happened to Larry when he did not listen?</div>
+          <div class="q-item"><span class="q-num">2.</span>Who do you listen to when they tell you something important?</div>
+          <div class="q-item"><span class="q-num">3.</span>Does God want us to listen? What do you think He says?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNACK -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#C8923A">
+      <div class="pt">4:00 to 4:15</div><div class="pl">Snack</div>
+    </div>
+    <div class="plan-body">
+      <div class="item"><span class="dash">-</span>All groups seated before anything is handed out. Discussion can flow into snack time at Kendall's discretion if the conversation is good, keep it going.</div>
+      <div class="item"><span class="dash">-</span>Quiet voices. No one moves until the room is calm.</div>
+      <div class="item"><span class="dash">-</span>Parker + Gentry bring Littles in for snack if manageable, or keep them in Little Zone 2.</div>
+      <div class="script-box" style="background:#FFF8EE;border:1px solid #C8923A;margin-top:10px">
+        <div class="script-label" style="color:#C8923A">Script:</div>
+        <div class="script-text">Everyone find a seat. Quiet voices. We are not moving until everyone is calm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#B85C2A">
+      <div class="pt">4:15 to 4:35</div><div class="pl">Video Discussion Middles and Bigs Together</div>
+    </div>
+    <div class="plan-body">
+      <div class="group-card" style="background:#B85C2A08;border:1px solid #B85C2A30">
+        <span class="group-tag" style="background:#B85C2A18;color:#B85C2A">Middles + Bigs</span>
+        <div class="group-zone">Kendall Zones 1 and 2</div>
+        <div class="item"><span class="dash" style="color:#B85C2A">-</span>Gather back in the circle or couch area. Same setup as icebreaker.</div>
+        <div class="item"><span class="dash" style="color:#B85C2A">-</span>Let the conversation breathe. Do not rush through every question.</div>
+        <div style="margin-top:10px">
+          <div class="q-label">Discussion Questions:</div>
+          <div class="q-item"><span class="q-num">1.</span>Why do you think Samuel kept thinking it was Eli calling him instead of God? Have you ever missed something important because you were not really listening?</div>
+          <div class="q-item"><span class="q-num">2.</span>Chris thought he was too young to make a difference. Have you ever felt that way? What happened?</div>
+          <div class="q-item"><span class="q-num">3.</span>Would you rather have God call your name three times, or just once and you get it immediately? What do you think that says about you?</div>
+          <div class="q-item"><span class="q-num">4.</span>Samuel said "Speak, your servant is listening." What would it look like for you to say that to God this week actually mean it?</div>
+          <div class="q-item"><span class="q-num">5.</span>What is one thing God might be calling you to do right now that you have been ignoring or thinking you are too young for?</div>
+        </div>
+        <div class="script-box" style="background:#EAF3FB;border:1px solid #1A3C5E;margin-top:12px">
+          <div class="script-label" style="color:#1A3C5E">Key verse to close with:</div>
+          <div class="script-text">Don't let anyone think less of you because you are young. Be an example to all believers in what you say, in the way you live, in your love, your faith, and your purity. 1 Timothy 4:12</div>
+        </div>
+        <div class="script-box" style="background:#FFF8EE;border:1px solid #C8923A;margin-top:10px">
+          <div class="script-label" style="color:#C8923A">Closing prayer:</div>
+          <div class="script-text">God, help us hear your voice and actually stop long enough to listen. Remind us that you do not wait until we are older or bigger or more put together. You call us now. Help us say yes. Amen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREE TIME -->
+  <div class="plan-block">
+    <div class="plan-head" style="background:#1A6B6B">
+      <div class="pt">4:35 to 5:00</div><div class="pl">Free Time All Inside</div>
+    </div>
+    <div class="plan-body">
+      <div class="item"><span class="dash">-</span>Kids choose their own activity. All inside today.</div>
+      <div class="item"><span class="dash">-</span>Zone 1 open space available. Switch Sports on the TV at your discretion free time only. If it causes arguing or anyone gets rowdy, it goes off immediately.</div>
+      <div class="item"><span class="dash">-</span>Zone 2 Uno and Go Fish at the table.</div>
+      <div class="item"><span class="dash">-</span>Little Zone 1 and 2 open play for Littles.</div>
+      <div class="item"><span class="dash">-</span>Leaders stay present. The 4 Rules still apply.</div>
+      <div class="item"><span class="dash">-</span>Clean up at 4:55. Nobody leaves until zones are tidy.</div>
+      <div class="script-box" style="background:#FFF8EE;border:1px solid #C8923A;margin-top:10px">
+        <div class="script-label" style="color:#C8923A">Clean up script:</div>
+        <div class="script-text">Nobody leaves until your zone is clean. Chairs in, materials put away, quick floor check.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARKER -->
+<div id="view-parker" style="display:none">
+  <div class="leader-header" style="background:#1A6B6B">
+    <div class="leader-emoji">🧸</div>
+    <div><div class="leader-name">Parker + Gentry</div><div class="leader-role">Littles Team September 20, 2026</div></div>
+  </div>
+  <div class="info-badge">📺 <span>Middles and Bigs are with Kendall today. You and Gentry are both with Littles the whole session.</span></div>
+  <div style="background:#fff;border-radius:12px;border:1px solid var(--border);padding:16px;margin-bottom:16px">
+    <div style="font-size:11px;font-weight:700;color:#1A3C5E;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Your Roster</div>
+    <div style="margin-bottom:8px">
+      <div style="font-size:11px;font-weight:700;color:#1A6B6B;margin-bottom:4px">Parker</div>
+      <div style="font-size:13px;color:#1C1C1C">Benaiah, Beau (babies)</div>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#1A6B6B;margin-bottom:4px">Gentry</div>
+      <div style="font-size:13px;color:#1C1C1C">Beckett, Milly, Woods (toddlers)</div>
+    </div>
+  </div>
+  <div id="parker-blocks"></div>
+</div>
+
+<!-- KENDALL + GENTRY -->
+<div id="view-kendall" style="display:none">
+  <div class="leader-header" style="background:#B85C2A">
+    <div class="leader-emoji">⚡</div>
+    <div><div class="leader-name">Kendall</div><div class="leader-role">Middles and Bigs September 20, 2026</div></div>
+  </div>
+  <div class="info-badge">📺 <span>You are solo leading Middles and Bigs together today. Parker + Gentry are with Littles. If the group size feels like too much at any point, use your judgment on how to restructure. Your call.</span></div>
+  <div style="background:#fff;border-radius:12px;border:1px solid var(--border);padding:16px;margin-bottom:16px">
+    <div style="font-size:11px;font-weight:700;color:#1A3C5E;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Your Roster</div>
+    <div style="margin-bottom:10px">
+      <div style="font-size:11px;font-weight:700;color:#6B3FA0;margin-bottom:4px">Middles</div>
+      <div style="font-size:13px;color:#1C1C1C;line-height:1.7">Kenzie, Nora, Everly, Wells, Curtis, Emmy, Adelaide</div>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#B85C2A;margin-bottom:4px">Bigs</div>
+      <div style="font-size:13px;color:#1C1C1C;line-height:1.7">Quinton, West, Walker, Kai, Levi, Caden</div>
+    </div>
+  </div>
+  <div id="kendall-blocks"></div>
+</div>
+
+<!-- MAP -->
+<div id="view-map" style="display:none">
+  <div class="info-badge">📺 <span>Fully inside today. Zone 3 is off limits now the homeschool room.</span></div>
+
+  <div style="font-family:Georgia,serif;font-size:17px;color:#1A3C5E;font-weight:700;margin-bottom:12px">Today's Zone Assignments</div>
+
+  <div class="assign-block">
+    <div class="assign-head" style="background:#6B3FA0"><div class="assign-head-label">3:10 to 3:30 Icebreaker</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#6B3FA0">Bigs</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Circle discussion</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#6B3FA0">Middles</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Circle discussion</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#6B3FA0">Littles</div><div class="assign-zone">Little Zone 2</div><div class="assign-activity">Open play</div></div>
+  </div>
+  <div class="assign-block">
+    <div class="assign-head" style="background:#1A7A4A"><div class="assign-head-label">3:30 to 4:00 Superbook Video</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#1A7A4A">Bigs</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Samuel and the Call of God</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#1A7A4A">Middles</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Samuel and the Call of God</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#1A7A4A">Littles</div><div class="assign-zone">Zone 3 corner by LZ2</div><div class="assign-activity">VeggieTales: Why Should I Listen?</div></div>
+  </div>
+  <div class="assign-block">
+    <div class="assign-head" style="background:#B85C2A"><div class="assign-head-label">4:15 to 4:35 Discussion</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#B85C2A">Bigs</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Video discussion</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#B85C2A">Middles</div><div class="assign-zone">Zones 1 + 2 Main Room</div><div class="assign-activity">Video discussion</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#B85C2A">Littles</div><div class="assign-zone">Little Zone 1 or 2</div><div class="assign-activity">Coloring + books</div></div>
+  </div>
+  <div class="assign-block">
+    <div class="assign-head" style="background:#1A6B6B"><div class="assign-head-label">4:35 to 5:00 Free Time</div></div>
+    <div class="assign-row"><div class="assign-group" style="color:#1A6B6B">All</div><div class="assign-zone">Zones 1 + 2 + Little Zones</div><div class="assign-activity">Free choice all inside</div></div>
+  </div>
+
+  <div style="font-family:Georgia,serif;font-size:17px;color:#1A3C5E;font-weight:700;margin:20px 0 12px">Floor Plan</div>
+  <div class="map-legend">
+    <div class="legend-item"><div style="width:7px;height:7px;border-radius:50%;background:#6B3FA0"></div><span style="font-size:11px;font-weight:600;color:#6B7280">Icebreaker</span></div>
+    <div class="legend-item"><div style="width:7px;height:7px;border-radius:50%;background:#1A7A4A"></div><span style="font-size:11px;font-weight:600;color:#6B7280">Video</span></div>
+    <div class="legend-item"><div style="width:7px;height:7px;border-radius:50%;background:#B85C2A"></div><span style="font-size:11px;font-weight:600;color:#6B7280">Discussion</span></div>
+    <div class="legend-item"><div style="width:7px;height:7px;border-radius:50%;background:#1A6B6B"></div><span style="font-size:11px;font-weight:600;color:#6B7280">Free Time</span></div>
+    <div class="legend-item"><div style="width:7px;height:7px;border-radius:50%;background:#C0392B"></div><span style="font-size:11px;font-weight:600;color:#6B7280">Off Limits</span></div>
+  </div>
+
+  <div class="floor-wrap">
+    <div class="floor-grid">
+      <div class="left-col">
+        <div class="stair-label">⬆ T</div>
+        <div class="room-box" style="background:#F8FAFC;border:2px solid #CBD5E1;min-height:140px" onclick="showDetail('theater')">
+          <div style="font-size:15px">🎬</div>
+          <div style="font-size:9px;font-weight:800;color:#94A3B8;text-transform:uppercase;margin-top:3px">Theater</div>
+          <div style="font-size:7px;color:#C0392B;font-weight:700;margin-top:2px">OFF LIMITS</div>
+        </div>
+        <div class="room-box" style="background:#F8FAFC;border:2px solid #CBD5E1;min-height:120px" onclick="showDetail('hvac')">
+          <div style="font-size:15px">⚙️</div>
+          <div style="font-size:9px;font-weight:800;color:#94A3B8;text-transform:uppercase;margin-top:3px">HVAC</div>
+          <div style="font-size:7px;color:#C0392B;font-weight:700;margin-top:2px">OFF LIMITS</div>
+        </div>
+        <div class="stair-label">⬇ B</div>
+      </div>
+      <div class="main-room">
+        <div style="font-size:9px;font-weight:800;color:#1A7A4A;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">🏠 Main Room 20 x 40 ft</div>
+        <div class="arcade-label">🎮 Switch Sports available during free time only</div>
+        <div class="blob" style="border:2px solid #B85C2A70;background:#B85C2A08;margin-bottom:8px;min-height:100px;border-radius:45% 50% 45% 50%" onclick="showDetail('z1')">
+          <div style="font-size:18px">⚡</div>
+          <div style="font-size:10px;font-weight:800;color:#B85C2A;text-transform:uppercase;margin-top:4px">Zone 1</div>
+          <div style="display:flex;gap:3px;margin-top:5px;justify-content:center">
+            <div style="width:8px;height:8px;border-radius:50%;background:#6B3FA0"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:#1A7A4A"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:#B85C2A"></div>
+            <div style="width:8px;height:8px;border-radius:50%;background:#1A6B6B"></div>
+          </div>
+        </div>
+        <div class="mr-mid" style="margin-bottom:8px">
+          <div class="blob" style="border:2px solid #1A6B6B70;background:#1A6B6B08;min-height:90px" onclick="showDetail('lz1')">
+            <div style="font-size:18px">🧸</div>
+            <div style="font-size:10px;font-weight:800;color:#1A6B6B;text-transform:uppercase;margin-top:4px">Little Zone 1</div>
+            <div style="display:flex;gap:3px;margin-top:5px;justify-content:center">
+              <div style="width:8px;height:8px;border-radius:50%;background:#1A6B6B"></div>
+            </div>
+          </div>
+          <div class="open-floor" style="min-height:90px"><span style="font-size:9px;color:#CBD5E1;font-weight:700;text-transform:uppercase">open floor</span></div>
+        </div>
+        <div class="mr-mid">
+          <div class="blob" style="border:2px solid #6B3FA070;background:#6B3FA008;min-height:90px" onclick="showDetail('z2')">
+            <div style="font-size:18px">🪑</div>
+            <div style="font-size:10px;font-weight:800;color:#6B3FA0;text-transform:uppercase;margin-top:4px">Zone 2</div>
+            <div style="display:flex;gap:3px;margin-top:5px;justify-content:center">
+              <div style="width:8px;height:8px;border-radius:50%;background:#6B3FA0"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#1A7A4A"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#B85C2A"></div>
+              <div style="width:8px;height:8px;border-radius:50%;background:#1A6B6B"></div>
+            </div>
+          </div>
+          <div class="open-floor" style="min-height:90px"><span style="font-size:9px;color:#CBD5E1;font-weight:700;text-transform:uppercase">open floor</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="junction-row">
+      <div style="text-align:center;font-size:9px;color:#94A3B8;font-weight:700;padding-top:10px">← Stairs</div>
+      <div class="blob" style="border:2px solid #C2557A70;background:#C2557A08;min-height:70px" onclick="showDetail('lz2')">
+        <div style="font-size:18px">🩷</div>
+        <div style="font-size:10px;font-weight:800;color:#C2557A;text-transform:uppercase;margin-top:4px">Little Zone 2</div>
+        <div style="display:flex;gap:3px;margin-top:5px;justify-content:center">
+          <div style="width:8px;height:8px;border-radius:50%;background:#6B3FA0"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#1A7A4A"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#B85C2A"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#1A6B6B"></div>
+        </div>
+      </div>
+      <div style="border:2px dashed #CBD5E1;border-radius:8px;background:#F8FAFC;display:flex;align-items:center;justify-content:center;min-height:70px">
+        <div style="font-size:8px;color:#CBD5E1;font-weight:700;text-align:center">gym →</div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <!-- ZONE 3 OFF LIMITS -->
+      <div class="z3-wrap" onclick="showDetail('z3')" style="cursor:pointer">
+        <div style="font-size:9px;font-weight:800;color:#C0392B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">🚫 Zone 3 Off Limits</div>
+        <div style="font-size:11px;color:#C0392B;font-weight:600;margin-bottom:4px">Now the homeschool room. No kids allowed.</div>
+        <div style="font-size:10px;color:#7D5A00;font-weight:600;background:#FEF9E7;border:1px solid #F0C040;border-radius:6px;padding:6px 8px;margin-bottom:6px">Exception: corner nearest Little Zone 2 has a small chairs and table setup for Littles video time only (3:30-4:00).</div>
+        <div style="font-size:8px;color:#C0392B;font-weight:700;margin-bottom:6px">🚪 Sliding glass door backyard (off limits today)</div>
+        <div class="bedrooms">
+          <div class="bedroom-label">Also off this hallway:</div>
+          <div class="bedroom-grid">
+            <div class="bedroom-cell"><div style="font-size:12px">🚪</div><div style="font-size:7px;font-weight:700;color:#94A3B8;text-transform:uppercase;margin-top:2px">Q Room</div><div style="font-size:7px;color:#C0392B;font-weight:700">OFF</div></div>
+            <div class="bedroom-cell"><div style="font-size:12px">🚿</div><div style="font-size:7px;font-weight:700;color:#94A3B8;text-transform:uppercase;margin-top:2px">Bath</div><div style="font-size:7px;color:#1A7A4A;font-weight:700">OK</div></div>
+            <div class="bedroom-cell"><div style="font-size:12px">🚪</div><div style="font-size:7px;font-weight:700;color:#94A3B8;text-transform:uppercase;margin-top:2px">Z Room</div><div style="font-size:7px;color:#C0392B;font-weight:700">OFF</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="blob" style="border:2px solid #94A3B870;background:#F8FAFC;min-height:160px;cursor:pointer" onclick="showDetail('gym')">
+        <div style="font-size:18px">🚫</div>
+        <div style="font-size:10px;font-weight:800;color:#94A3B8;text-transform:uppercase;margin-top:4px">Gym</div>
+        <div style="font-size:7px;color:#C0392B;font-weight:700;margin-top:2px">OFF LIMITS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-head">
+      <div style="font-size:24px" id="d-emoji"></div>
+      <div><div style="font-family:Georgia,serif;font-size:16px;font-weight:700;color:#1A3C5E" id="d-name"></div><div style="font-size:12px;color:#6B7280" id="d-sub"></div></div>
+      <div id="d-offlabel" style="display:none;background:#FEF2F2;color:#C0392B;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;border:1px solid #FECACA;margin-left:auto">OFF LIMITS</div>
+    </div>
+    <div style="font-size:13px;color:#1C1C1C;line-height:1.7;margin-bottom:10px" id="d-note"></div>
+    <div id="d-blocks"></div>
+    <button class="close-btn" onclick="closeDetail()">Close</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+const ZONE_INFO = {
+  z1:{label:"Zone 1",emoji:"⚡",sub:"Open floor + arcade top of main room",note:"Large open carpet area. Switch Sports on the TV available during free time only. Middles and Bigs use this all session icebreaker, video, discussion, and free time.",offLimits:false,blocks:[]},
+  z2:{label:"Zone 2",emoji:"🪑",sub:"Couch + round table bottom left of main room",note:"Dark sectional couch and round wood table. Primary gathering spot for Middles and Bigs today circle up here for icebreaker and discussion. Video watching happens across Zones 1 and 2.",offLimits:false,blocks:[]},
+  lz1:{label:"Little Zone 1",emoji:"🧸",sub:"Small table + shelving middle left of main room",note:"Small white table and chairs, cube storage units with toys. Parker uses this for Littles during discussion and free time.",offLimits:false,blocks:[]},
+  lz2:{label:"Little Zone 2",emoji:"🩷",sub:"Under-stairs pink room at stair landing",note:"Pink checkered walls, book shelves, cozy floor, pretend play. Parker keeps Littles here during icebreaker and video. Also available during free time.",offLimits:false,blocks:[]},
+  z3:{label:"Zone 3",emoji:"🚫",sub:"Homeschool room OFF LIMITS",note:"Zone 3 is now the homeschool room. No kids allowed in this space. The sliding glass door to the backyard is also off limits today since we are fully inside.",offLimits:true,blocks:[]},
+  gym:{label:"Gym",emoji:"🚫",sub:"Pass-through only off limits",note:"Weights, treadmill, equipment. Kids do not go in here.",offLimits:true,blocks:[]},
+  theater:{label:"Theater",emoji:"🎬",sub:"Walled column off limits",note:"Theater room behind the left wall. Not part of the program.",offLimits:true,blocks:[]},
+  hvac:{label:"HVAC",emoji:"⚙️",sub:"Utility room off limits",note:"Utility room. Not part of the program.",offLimits:true,blocks:[]},
+};
+
+function showDetail(id){
+  const z=ZONE_INFO[id]; if(!z)return;
+  document.getElementById('d-emoji').textContent=z.emoji;
+  document.getElementById('d-name').textContent=z.label;
+  document.getElementById('d-sub').textContent=z.sub;
+  document.getElementById('d-note').textContent=z.note;
+  document.getElementById('d-offlabel').style.display=z.offLimits?'block':'none';
+  document.getElementById('d-blocks').innerHTML='';
+  const p=document.getElementById('detail-panel');
+  p.classList.add('show');
+  p.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeDetail(){document.getElementById('detail-panel').classList.remove('show');}
+
+const LEADER_BLOCKS={
+  parker:[
+    {time:"3:00-3:10",title:"Arrival",items:["Be in Little Zone 2 before kids arrive.","Calm and quiet. No running."]},
+    {time:"3:10-3:30",title:"Icebreaker Time — Little Zone 2",items:["Open play, books, soft toys while Middles and Bigs do icebreaker.","Simple prompts: Can you build a tower? What color is that?","Keep it calm and contained."]},
+    {time:"3:30-4:00",title:"Video Time — Zone 3 corner by Little Zone 2",items:["Move to the small setup in the Zone 3 corner nearest Little Zone 2. Two chairs and a table. This corner only.","Settle Beckett, Milly, and Woods in the chairs before pressing play. Benaiah and Beau can be held.","Keep it calm and cozy. Does not need to be structured."],videoUrl:"https://youtu.be/5UFe29_oC7A",videoLabel:"VeggieTales: Why Should I Listen? (Larry Learns to Listen)",questions:["What happened to Larry when he did not listen?","Who do you listen to when they tell you something important?","Does God want us to listen? What do you think He says?"]},
+    {time:"4:00-4:15",title:"Snack",items:["Bring Littles in to join snack if manageable.","If they are settled in Little Zone 2, snack them there instead.","Quiet voices. Seated before anything is handed out."],script:"Everyone find a seat. Quiet voices. We are not moving until everyone is calm."},
+    {time:"4:15-4:35",title:"Discussion Time — Little Zone 1 or 2",items:["Middles and Bigs are in discussion. Keep Littles separate.","Coloring pages and board books. Wind-down mode.","Keep it quiet and calm."]},
+    {time:"4:35-5:00",title:"Free Time",items:["Littles can use Little Zone 1 and Little Zone 2.","Stay with them at all times.","Clean up at 4:55 before anyone is dismissed."],script:"Nobody leaves until your zone is clean. Chairs in, materials put away, quick floor check."},
+  ],
+  kendall:[
+    {time:"3:00-3:10",title:"Arrival",items:["Be in the main room (Zones 1 and 2) before kids arrive.","Kendall receives Middles and Bigs. Parker and Gentry have Littles.","Get everyone settled bags down, find a spot.","Say the 4 Rules before icebreaker starts."],rules:["Hands and feet to yourself","Listen the first time","Stay in your zone","Respect leaders and each other"]},
+    {time:"3:10-3:30",title:"Icebreaker Zones 1 and 2",items:["Sit everyone in a circle or gathered around the couch.","","Leaders go first to model it and set the tone.","Go around the circle everyone answers before moving to the next question."],questions:["What is one word that describes your week?","What is something that happened this week that you did not expect?","If you could have any superpower for one day this week, what would you have used it for?","What is one thing you are looking forward to this week?"],script:"Alright. We are going to watch something together today. It is about a kid who thought he was too young to matter. Spoiler he was wrong. Let's watch.",scriptLabel:"Transition to video:"},
+    {time:"3:30-4:00",title:"Superbook Video Zones 1 and 2",items:["Get everyone settled and seated before pressing play.","No talking during the video. Pause and reset if it gets noisy.","Episode is 27 minutes. Ends right at 4:00."],videoUrl:"https://youtu.be/dMoekXiJw_A",videoLabel:"Samuel and the Call of God YouTube"},
+    {time:"4:00-4:15",title:"Snack",items:["All seated before anything is handed out.","Quiet voices. Nobody moves until the room is calm."],script:"Everyone find a seat. Quiet voices. We are not moving until everyone is calm."},
+    {time:"4:15-4:35",title:"Discussion Zones 1 and 2",items:["Gather back in the circle. Same setup as icebreaker.","","Let the conversation breathe. Do not rush through every question."],questions:["Why do you think Samuel kept thinking it was Eli calling him instead of God? Have you ever missed something important because you were not really listening?","Chris thought he was too young to make a difference. Have you ever felt that way? What happened?","Would you rather have God call your name three times, or just once and you get it immediately? What does that say about you?","Samuel said Speak, your servant is listening. What would it look like for you to actually say that to God this week?","What is one thing God might be calling you to do right now that you have been ignoring or thinking you are too young for?"],keyVerse:"Don't let anyone think less of you because you are young. Be an example to all believers in what you say, in the way you live, in your love, your faith, and your purity. 1 Timothy 4:12",prayer:"God, help us hear your voice and actually stop long enough to listen. Remind us that you do not wait until we are older or bigger or more put together. You call us now. Help us say yes. Amen."},
+    {time:"4:35-5:00",title:"Free Time",items:["Kids choose their activity. All inside.","Zone 1 open space. Switch Sports at Kendall's discretion.","Zone 2 Uno and Go Fish at the table.","The 4 Rules still apply. Stay present.","Clean up at 4:55."],script:"Nobody leaves until your zone is clean. Chairs in, materials put away, quick floor check."},
+  ]
+};
+
+function renderLeaderBlocks(id){
+  const blocks=LEADER_BLOCKS[id];
+  const container=document.getElementById(id+'-blocks');
+  if(!container||!blocks)return;
+  container.innerHTML=blocks.map((block,bi)=>{
+    const bid=id+'-block-'+bi;
+    return`<div class="lblock">
+      <div class="lblock-head" onclick="toggleBlock('${bid}')">
+        <div class="lblock-time">${block.time}</div>
+        <div class="lblock-title">${block.title}</div>
+        <div class="lblock-chev" id="${bid}-chev">▾</div>
+      </div>
+      <div class="lblock-body" id="${bid}">
+        <div style="height:12px"></div>
+        ${(block.items||[]).map(i=>`<div class="item"><span class="dash" style="color:#C8923A">-</span>${i}</div>`).join('')}
+        ${block.rules?`<div style="margin-top:10px"><div class="rules-label" style="color:#1A3C5E">The 4 Rules</div>${block.rules.map((r,ri)=>`<div class="rule-item"><span class="rule-num" style="color:#1A3C5E">${ri+1}.</span>${r}</div>`).join('')}</div>`:''}
+        ${block.videoUrl?`<div style="margin-top:12px;background:#1A3C5E;border-radius:10px;padding:14px 16px"><div style="font-size:13px;color:#8BAFD0;margin-bottom:6px">${block.videoLabel}</div><a href="${block.videoUrl}" target="_blank" style="display:inline-block;background:#C8923A;color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;text-decoration:none">▶ Open Video</a></div>`:''}
+        ${block.questions?`<div style="margin-top:10px"><div class="q-label">Questions:</div>${block.questions.map((q,qi)=>`<div class="q-item"><span class="q-num">${qi+1}.</span>${q}</div>`).join('')}</div>`:''}
+        ${block.keyVerse?`<div style="margin-top:12px;background:#EAF3FB;border:1px solid #1A3C5E;border-radius:8px;padding:12px 14px"><div style="font-size:11px;font-weight:700;color:#1A3C5E;text-transform:uppercase;margin-bottom:5px">Key Verse to close with:</div><div style="font-size:13px;font-style:italic;line-height:1.7">${block.keyVerse}</div></div>`:''}
+        ${block.prayer?`<div style="margin-top:10px;background:#EAF3FB;border:1px solid #1A3C5E;border-radius:8px;padding:12px 14px"><div style="font-size:11px;font-weight:700;color:#1A3C5E;text-transform:uppercase;margin-bottom:5px">Closing Prayer:</div><div style="font-size:13px;font-style:italic;line-height:1.7">${block.prayer}</div></div>`:''}
+        ${block.script?`<div class="script-box" style="background:#FFF8EE;border:1px solid #C8923A;margin-top:10px"><div class="script-label" style="color:#C8923A">${block.scriptLabel||'Script:'}</div><div class="script-text">${block.script}</div></div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleBlock(id){
+  const body=document.getElementById(id);
+  const chev=document.getElementById(id+'-chev');
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open');
+  if(chev)chev.style.transform=isOpen?'none':'rotate(180deg)';
+}
+
+function showView(id,btn){
+  document.querySelectorAll('[id^="view-"]').forEach(el=>el.style.display='none');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('view-'+id).style.display='block';
+  if(btn)btn.classList.add('active');
+  if(['parker','kendall'].includes(id))renderLeaderBlocks(id);
+}
+</script>
+</body>
+</html>
